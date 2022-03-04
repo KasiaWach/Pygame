@@ -1,6 +1,6 @@
 import pygame
 import random
-
+import os
 
 # inicjalizacja
 pygame.init()
@@ -9,15 +9,15 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 
 # obrazek w tle
-background = pygame.image.load('ezgif.com-optimize.gif')
+background = pygame.image.load('Grafika\ezgif.com-optimize.gif')
 
 # tytuł okna i ikonka
 pygame.display.set_caption('Space Invaders')
-icon = pygame.image.load('ufo.png')
+icon = pygame.image.load(os.path.join('Grafika', 'ufo.png'))
 pygame.display.set_icon(icon)
 
 # Ikonka gracza
-playerImg = pygame.image.load('space-invaders.png')
+playerImg = pygame.image.load(os.path.join('Grafika', 'space-invaders.png'))
 playerX = 370  # 370 px od lewej
 playerY = 480  # 480 px od góry
 playerX_change = 0
@@ -30,14 +30,14 @@ enemyX_change = []
 enemyY_change = []
 num_of_enemies = 6
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('alien.png'))
+    enemyImg.append(pygame.image.load(os.path.join('Grafika', 'alien.png')))
     enemyX.append(random.randint(0, 735))
     enemyY.append(random.randint(50, 150))
     enemyX_change.append(random.choice([-0.3, 0.3]))
     enemyY_change.append(40)
 
 # Ikonka pocisku
-bulletImg = pygame.image.load('bullets.png')
+bulletImg = pygame.image.load(os.path.join('Grafika', 'bullets.png'))
 bulletX = 0
 bulletY = 480
 bulletX_change = 0
